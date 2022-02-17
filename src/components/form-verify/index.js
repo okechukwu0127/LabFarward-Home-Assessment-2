@@ -70,7 +70,7 @@ function FormUserResult({
           </div>
           <div class="col-md-6 col-sm-12 col-xs-12">
             <div className="pull-right_">
-              <h4 className="margin20">READING DETAILS</h4>
+              <h4 className="margin10">READING DETAILS</h4>
 
               <pre style={{ paddingTop: 0 }}>
                 <div className="verifyLabel">Dispense-1 Reading</div>
