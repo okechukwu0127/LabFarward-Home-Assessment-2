@@ -184,7 +184,7 @@ ol.progtrckr li.progtrckr-done:hover:before {
 }
 
 .verifyPadding{
-  padding: 20px; margin-bottom: 30px; height: 400px
+  padding: 20px; margin-bottom: 30px; 
 }
 
 .margin20{
@@ -199,3 +199,36 @@ ol.progtrckr li.progtrckr-done:hover:before {
 .font19{
   font-size: 19px
 }
+
+.alert.warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+
+
+.closebtn {
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+

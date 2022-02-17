@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import LazyLoad from "react-lazyload"; // use lazyload for components and image
+
 import StepZilla from "react-stepzilla";
 //import { formStage, formPrivacy } from '../../store/rootSlice'
 import "./styles.scss";
@@ -26,19 +28,60 @@ function FormRecording({ pageTitle, submitButtonText, previousButton }) {
     dispatch(ReadingUpdate(props));
   };
 
+  function HideAlert(data) {
+    setShowAlert(data);
+  }
+
   const steps = [
-    { name: "Reading 1", component: <Stepper index="1" OnChange={OnChange} /> },
-    { name: "Reading 2", component: <Stepper index="2" OnChange={OnChange} /> },
-    { name: "Reading 3", component: <Stepper index="3" OnChange={OnChange} /> },
-    { name: "Reading 4", component: <Stepper index="4" OnChange={OnChange} /> },
-    { name: "Reading 5", component: <Stepper index="5" OnChange={OnChange} /> },
+    {
+      name: "Reading 1",
+      component: (
+        <Stepper index="1" OnChange={OnChange} setShowAlert={HideAlert} />
+      ),
+    },
+    {
+      name: "Reading 2",
+      component: (
+        <Stepper index="2" OnChange={OnChange} setShowAlert={HideAlert} />
+      ),
+    },
+    {
+      name: "Reading 3",
+      component: (
+        <Stepper index="3" OnChange={OnChange} setShowAlert={HideAlert} />
+      ),
+    },
+    {
+      name: "Reading 4",
+      component: (
+        <Stepper index="4" OnChange={OnChange} setShowAlert={HideAlert} />
+      ),
+    },
+    {
+      name: "Reading 5",
+      component: (
+        <Stepper index="5" OnChange={OnChange} setShowAlert={HideAlert} />
+      ),
+    },
   ];
+
+  const [showAlert, setShowAlert] = useState(false);
 
   return (
     <>
       <h2>{pageTitle}</h2>
       <br />
       <center className="stepperPadding">
+        <LazyLoad once>
+          <div
+            class="alert warning"
+            style={{ display: showAlert ? "block" : "none" }}
+          >
+            <span class="closebtn">&times;</span>
+            <strong>Warning!&nbsp;&nbsp;</strong> One or more reading value were
+            not provided. All reading values are mandatory
+          </div>
+        </LazyLoad>
         <StepZilla
           //hocValidationAppliedTo={[0, 1]}
           startAtStep="1"
@@ -93,9 +136,10 @@ function FormRecording({ pageTitle, submitButtonText, previousButton }) {
                 type="button"
                 style={{ backgroundColor: "grey" }}
                 onClick={() => {
-                  alert(
+                  setShowAlert(true);
+                  /* alert(
                     "One or more reading value were not provided.\nAll reading values are mandatory"
-                  );
+                  ); */
                 }}
                 value={submitButtonText || "Submit"}
               />

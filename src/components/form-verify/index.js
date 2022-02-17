@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./styles.scss";
 import "../../assets/css/main.css";
@@ -20,13 +20,20 @@ function FormUserResult({
   const currentStage = useSelector((state) => state.FormFeed.FormStage); // for previous button
 
   const Form = useSelector((state) => state.FormFeed); // for form state
+  const [isLinkElementLoaded, setLinkElementLoaded] = useState(false);
 
-  const stateOutput = `JSON Data Form-Completed: ${JSON.stringify(
-    state,
-    null,
-    4
-  )}`;
-  console.log(stateOutput); // output to console.log
+  useEffect(() => {
+    const linkElement = document.createElement("link");
+    linkElement.setAttribute("rel", "stylesheet");
+    linkElement.setAttribute("type", "text/css");
+    linkElement.setAttribute(
+      "href",
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    );
+    document.head.appendChild(linkElement);
+
+    setLinkElementLoaded(true);
+  }, []);
 
   return (
     <>
@@ -45,41 +52,44 @@ function FormUserResult({
       </div>
 
       <div className="code-output verifyPadding">
-        <div className="pull-left">
-          <h4 className="margin10">USER DETAILS</h4>
-          <pre style={{ paddingTop: 0 }}>
-            <div className="verifyLabel">Name</div>
-            <div className="font19">
-              {Form.FormSignup.name}
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div className="pull-left_">
+              <h4 className="margin10">USER DETAILS</h4>
+              <pre style={{ paddingTop: 0 }}>
+                <div className="verifyLabel">Name</div>
+                <div className="font19">{Form.FormSignup.name}</div>
+
+                <div className="verifyLabel margin20">Role</div>
+                <div className="font19">{Form.FormSignup.role}</div>
+
+                <div className="verifyLabel margin20">Number of readings</div>
+                <div className="font19">{Form.FormSignup.times}</div>
+              </pre>
             </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div className="pull-right_">
+              <h4 className="margin20">READING DETAILS</h4>
 
-            <div className="verifyLabel margin20">Role</div>
-            <div className="font19">{Form.FormSignup.role}</div>
+              <pre style={{ paddingTop: 0 }}>
+                <div className="verifyLabel">Dispense-1 Reading</div>
+                <div className="font19">{Form.Reading1}</div>
 
-            <div className="verifyLabel margin20">Number of readings</div>
-            <div className="font19">{Form.FormSignup.times}</div>
-          </pre>
-        </div>
+                <div className="verifyLabel margin20">Dispense-2 Reading</div>
+                <div className="font19">{Form.Reading2}</div>
 
-        <div className="pull-right" style={{ marginRight: 150 }}>
-          <h4 className="margin20">READING DETAILS</h4>
+                <div className="verifyLabel margin20">Dispense-3 Reading</div>
+                <div className="font19">{Form.Reading3}</div>
 
-          <pre style={{ paddingTop: 0 }}>
-            <div className="verifyLabel">Dispense-1 Reading</div>
-            <div className="font19">{Form.Reading1}</div>
+                <div className="verifyLabel margin20">Dispense-4 Reading</div>
+                <div className="font19">{Form.Reading4}</div>
 
-            <div className="verifyLabel margin20">Dispense-2 Reading</div>
-            <div className="font19">{Form.Reading2}</div>
-
-            <div className="verifyLabel margin20">Dispense-3 Reading</div>
-            <div className="font19">{Form.Reading3}</div>
-
-            <div className="verifyLabel margin20">Dispense-4 Reading</div>
-            <div className="font19">{Form.Reading4}</div>
-
-            <div className="verifyLabel margin20">Dispense-5 Reading</div>
-            <div className="font19">{Form.Reading5}</div>
-          </pre>
+                <div className="verifyLabel margin20">Dispense-5 Reading</div>
+                <div className="font19">{Form.Reading5}</div>
+              </pre>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -89,6 +99,7 @@ function FormUserResult({
             <p>
               <input
                 type="submit"
+                style={{ fontWeight: "400" }}
                 value={`Back`}
                 onClick={() => dispatch(NextPageAction(currentStage - 1))}
               />
@@ -107,6 +118,7 @@ function FormUserResult({
             Form.Reading5 != null ? (
               <input
                 type="button"
+                style={{ fontWeight: "400" }}
                 value={submitButtonText || "Submit"}
                 onClick={() => dispatch(NextPageAction(currentStage + 1))}
               />
@@ -114,11 +126,7 @@ function FormUserResult({
               <input
                 type="button"
                 style={{ backgroundColor: "grey" }}
-                onClick={() => {
-                  alert(
-                    "One or more reading value were not provided.\nAll reading values are mandatory"
-                  );
-                }}
+                onClick={() => {}}
                 value={submitButtonText || "Submit"}
               />
             )}
