@@ -47,6 +47,7 @@ const Stepper = (props) => {
             type="number"
             class="form-control readingInput"
             onChange={(e) => {
+              props.setShowAlert(false)
               props.OnChange(e, props.index);
             }}
             //defaultValue={value}

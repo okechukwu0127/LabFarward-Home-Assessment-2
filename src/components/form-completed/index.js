@@ -108,6 +108,7 @@ function FormUserResult({ pageTitle, successMessage }) {
           <p>
             <input
               type="button"
+              style={{ fontWeight: "400" }}
               onClick={() => {
                 //ResetForm
                 dispatch(ResetForm());

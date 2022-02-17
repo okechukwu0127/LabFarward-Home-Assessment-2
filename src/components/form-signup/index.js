@@ -112,7 +112,7 @@ function FormUserSignup({
       >
         <p>
           <label htmlFor="name">
-            name<span className="required-asterix">*</span>
+            Name<span className="required-asterix">*</span>
           </label>
           <input
             type="text"
@@ -129,7 +129,7 @@ function FormUserSignup({
         {errors.name && <span className="error-message">{errors.name}</span>}
 
         <p>
-          <label htmlFor="role">role</label>
+          <label htmlFor="role">Role</label>
           <input
             type="text"
             id="role"
