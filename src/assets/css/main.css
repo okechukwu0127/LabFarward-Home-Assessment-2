@@ -1,0 +1,201 @@
+ol.progtrckr {
+  list-style-type: none;
+  padding: 0;
+}
+
+ol.progtrckr li {
+  display: inline-block;
+  text-align: center;
+  line-height: 4.5rem;
+  cursor: pointer;
+}
+
+ol.progtrckr li span {
+  padding: 0 1.5rem;
+  font-size: 11px;
+}
+
+@media (max-width: 650px) {
+  .progtrckr li span {
+    display: none;
+  }
+}
+.progtrckr em {
+  display: none;
+  font-weight: 700;
+  padding-left: 1rem;
+}
+
+@media (max-width: 650px) {
+  .progtrckr em {
+    display: inline;
+  }
+}
+
+ol.progtrckr li.progtrckr-todo {
+  color: silver;
+  border-bottom: 4px solid silver;
+}
+
+ol.progtrckr li.progtrckr-doing {
+  color: black;
+  border-bottom: 4px solid #d03987;
+}
+
+ol.progtrckr li.progtrckr-done {
+  color: black;
+  border-bottom: 4px solid #5cb85c;
+}
+
+ol.progtrckr li:after {
+  content: "\00a0\00a0";
+}
+
+ol.progtrckr li:before {
+  position: relative;
+  bottom: -3.7rem;
+  float: left;
+  left: 50%;
+}
+
+ol.progtrckr li.progtrckr-todo:before {
+  content: "\039F";
+  color: silver;
+  background-color: white;
+  width: 1.2em;
+  line-height: 1.4em;
+}
+
+ol.progtrckr li.progtrckr-todo:hover:before {
+  color: #ff4500;
+}
+
+ol.progtrckr li.progtrckr-doing:before {
+  content: "\2022";
+  color: white;
+  background-color: #d03987;
+  width: 1.2em;
+  line-height: 1.2em;
+  border-radius: 1.2em;
+}
+
+ol.progtrckr li.progtrckr-doing:hover:before {
+  color: #ff4500;
+}
+
+ol.progtrckr li.progtrckr-done:before {
+  content: "\2713";
+  color: white;
+  background-color: #5cb85c;
+  width: 1.5em;
+  line-height: 1.5em;
+  border-radius: 1.5em;
+}
+
+ol.progtrckr li.progtrckr-done:hover:before {
+  color: #333;
+}
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.btn {
+  margin: 0;
+  height: auto;
+
+  padding: 0.5rem 1rem;
+  font-weight: 100;
+  font-size: 11px;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.btn:hover {
+  margin: 0;
+  height: auto;
+
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #5cb85c;
+  cursor: pointer;
+}
+
+.readingImage {
+  width: 130px;
+  margin: 20px;
+  margin-bottom: 50px;
+}
+.readingLabel {
+  color: grey;
+  font-size: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.readingFormGroup {
+  padding: 20px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+.readingContainer {
+  text-align: "left";
+  width: "100%";
+}
+
+.readingInput {
+  width: 100%;
+  padding: 10px;
+}
+
+.stepperPadding {
+  margin-top: 40px;
+  padding-bottom: 80px;
+}
+
+.button {
+  margin: 0;
+  height: auto;
+  width: auto;
+  padding: 0.5rem 2rem;
+  font-weight: 100;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #d03987;
+  cursor: pointer;
+}
+
+.verifyLabel {
+  color: #726969;
+  font-size: 13px;
+}
+
+.verifyPadding{
+  padding: 20px; margin-bottom: 30px; height: 400px
+}
+
+.margin20{
+  margin-top:20px
+}
+
+
+.margin10{
+  margin-top:10px
+}
+
+.font19{
+  font-size: 19px
+}
