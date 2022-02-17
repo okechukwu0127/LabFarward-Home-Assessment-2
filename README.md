@@ -37,14 +37,14 @@ Pipette tip: Pipette tips are disposable, attachments for the uptake and dispens
 npm install
 npm start
 ````
-![Example1](./md/v1.png)
+![Example1](./md/LabAttendantForm.png)
 
 
 ## Components
 
 ### Attendant Form:
 Component for Attendant Page
-![Component for Signup Page](./md/v2.png)
+![Component for Signup Page](./md/LabAttendantFormValidation.png)
 | Prop Name       | Description           | Example  | Type  |
 | ------------- |:-------------:| -----:| -----:|
 | pageTitle | form page stage title | {'User Form:'} | `string` |
@@ -55,7 +55,7 @@ Component for Attendant Page
 
 ### Data Recording  Component
 Component for recording Dispense 1-5
-![Component for Privacy Page](./md/v3.png)
+![Component for Privacy Page](./md/TakePipetteReadingScreen.png)
 | Prop Name       | Description           | Example  | Type  |
 | ------------- |:-------------:| -----:| -----:|
 | pageTitle | form page stage title | {'Privacy Form:'} | `string` |
@@ -68,7 +68,7 @@ Component for recording Dispense 1-5
 
 ### Data Verification  Component
 Component for verifying inputed data
-![Component for Privacy Page](./md/v4.png)
+![Component for Privacy Page](./md/VerificationScreen.png)
 
 
 <br />
@@ -78,7 +78,7 @@ Component for verifying inputed data
 ### Calculation  Component
 Component for Calculating Mean, Std. Deviation, Accuracy and Precision
 
-![Component for Completion Page](./md/v5.png)
+![Component for Completion Page](./md/SuccessScreenWithCalculations.png)
 | Prop Name       | Description           | Example  | Type  |
 | ------------- |:-------------:| -----:| -----:|
 | pageTitle | form page stage title | {'Success!'} | `string` |
@@ -92,8 +92,11 @@ __React Testing Library__
 <br /><br />
 run `npm test` to perform testing
 <br />
-Basic test to check page h1 title loads with test id.
+
+Basic Test to confirm if Button isEnabled and check page h1 title loads with test id.
+<br/>
 <br />
-![React Testing Library 1](./md/test1.png)
-![React Testing Library 2](./md/test2.png)
+![React Testing Library 1](./md/TestAttendanceNextButton.png)
+![React Testing Library 2](./md/test1.png)
+![React Testing Library 3](./md/test2.png)
 

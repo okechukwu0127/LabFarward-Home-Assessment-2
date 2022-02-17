@@ -1,9 +1,9 @@
-//import { render, screen } from "@testing-library/react";
+//import {  screen } from "@testing-library/react";
 import { render, fireEvent, screen } from "./../../configTests";
 
 import FormUserSignup from "./index";
 
-test("Lab Attentance Form Next Button Disable Checker", () => {
+test("Lab Attentance Form Next Button Disable Checker", async () => {
   render(
     <FormUserSignup
       FormFeed={{
@@ -17,5 +17,5 @@ test("Lab Attentance Form Next Button Disable Checker", () => {
     />
   );
 
-  screen.debug();
+  expect(await screen.findByRole("button", { name: /Next/i })).toBeEnabled(); //Test if button exist and is enabled
 });

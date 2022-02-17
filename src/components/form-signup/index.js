@@ -23,15 +23,14 @@ function FormUserSignup({
 
   const formstageTimes = FormFeed.FormSignup?.times;
 
-  console.log("FormSignup", FormSignup);
-  console.log("Form", Form);
+  
 
   // form values initial state
   const [formData, setFormData] = useState({
     name: formstageName || "",
     role: formstageRole || "",
     times: formstageTimes || "",
-    //password: formstagePass || "",
+   
   });
 
   // form values onchange
@@ -150,7 +149,6 @@ function FormUserSignup({
             type="number"
             id="times"
             name="times"
-            //defaultValue={5}
             autoComplete="times"
             aria-label="times"
             aria-required="false"
@@ -165,7 +163,6 @@ function FormUserSignup({
           {previousButton && (
             <p>
               <input
-                
                 type="submit"
                 value={`Back`}
                 onClick={() => dispatch(NextPageAction(currentStage - 1))}
@@ -173,7 +170,12 @@ function FormUserSignup({
             </p>
           )}
           <p>
-            <input data-submit-signup="" type="submit" value={submitButtonText || "Submit"} />
+            <input
+              name="lab_attendance_next_button"
+              data-submit-signup=""
+              type="submit"
+              value={submitButtonText || "Submit"}
+            />
           </p>
         </div>
       </form>
