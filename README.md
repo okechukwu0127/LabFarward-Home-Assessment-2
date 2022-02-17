@@ -11,8 +11,9 @@ documentation. The purpose of this test is to check if the pipette is dispensing
 amount of liquid each time.
 <br />
 
-### Scope
-This procedure is to be used for demonstrations of automatic calibration and documentation.
+### Scope & Time Dedicated
+This procedure is to be used for demonstrations of automatic calibration and documentation.<br/>
+I spend aproximately 6 -7 hours on the assessment. Would have loved to add an End-to-End automated testing using Cypress if I had more time
 <br />
 
 ### Definitions
