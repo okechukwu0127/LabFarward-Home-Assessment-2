@@ -77,7 +77,9 @@ function FormRecording({ pageTitle, submitButtonText, previousButton }) {
             class="alert warning"
             style={{ display: showAlert ? "block" : "none" }}
           >
-            <span class="closebtn">&times;</span>
+            <span class="closebtn" onClick={()=>setShowAlert(false)}>
+              &times;
+            </span>
             <strong>Warning!&nbsp;&nbsp;</strong> One or more reading value were
             not provided. All reading values are mandatory
           </div>
